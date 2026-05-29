@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Agent 时代采用现成方案与自己构建工具的研究问卷"
+    />
+    <title>Agent 工具决策反馈问卷</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23176b87'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Arial' font-size='22' font-weight='700' fill='white'%3EI01%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <aside class="study-panel" aria-label="研究信息">
+        <div class="study-mark">I01</div>
+        <h1>Agent 时代的工具决策问卷</h1>
+        <p>
+          这份问卷关注：当团队已有共享工具、脚本或模板时，agent
+          是否让人更容易选择“自己造一个”。
+        </p>
+        <dl class="study-facts">
+          <div>
+            <dt>预计时间</dt>
+            <dd>6-8 分钟</dd>
+          </div>
+          <div>
+            <dt>适合对象</dt>
+            <dd>高频使用 agent / vibe coding 的团队成员</dd>
+          </div>
+          <div>
+            <dt>数据用途</dt>
+            <dd>探索性研究、后续访谈招募</dd>
+          </div>
+        </dl>
+      </aside>
+
+      <section class="survey-panel" aria-live="polite">
+        <header class="survey-header">
+          <div>
+            <p class="eyebrow" id="section-kicker">准备开始</p>
+            <h2 id="section-title">反馈问卷</h2>
+          </div>
+          <div class="progress-wrap" aria-label="问卷进度">
+            <span id="progress-label">0%</span>
+            <div class="progress-track">
+              <div class="progress-bar" id="progress-bar"></div>
+            </div>
+          </div>
+        </header>
+
+        <form id="survey-form" novalidate></form>
+
+        <footer class="survey-actions">
+          <button class="secondary" type="button" id="back-button">上一步</button>
+          <div class="action-group">
+            <button class="ghost" type="button" id="save-button">保存草稿</button>
+            <button class="primary" type="button" id="next-button">开始</button>
+          </div>
+        </footer>
+
+        <div class="status" id="status" role="status"></div>
+      </section>
+    </main>
+
+    <template id="completion-template">
+      <section class="completion">
+        <div class="completion-mark">✓</div>
+        <h2>谢谢，已经完成</h2>
+        <p>
+          如果当前站点尚未配置提交端点，你可以下载 JSON
+          结果，用于预测试或手动汇总。
+        </p>
+        <div class="completion-actions">
+          <button class="primary" type="button" data-action="download">
+            下载本次回答
+          </button>
+          <button class="secondary" type="button" data-action="restart">
+            重新填写
+          </button>
+        </div>
+      </section>
+    </template>
+
+    <script src="./config.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

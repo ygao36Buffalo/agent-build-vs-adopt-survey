@@ -55,8 +55,8 @@ const sections = [
         type: "single",
         required: true,
         label:
-          "你现在（或过去 6 个月内）是否在一个维护着共享工具、脚本、模板或文件、且成员被期望去使用的团队中工作？",
-        options: ["是", "否", "不确定"]
+          "在你的工作里，是否存在别人做好、你可以拿来用的东西——比如同事写的脚本、共享的模板或表格、团队沉淀的文档、内部工具？",
+        options: ["经常有，我也会用", "有，但我常常不用", "几乎没有这种共享", "我基本独立工作，没有团队"]
       },
       {
         id: "s0_3",
@@ -641,7 +641,6 @@ function getScreenOutReason() {
   if (["从不", "不到每周一次"].includes(state.answers.s0_1)) {
     return "agent_use_frequency_below_threshold";
   }
-  if (state.answers.s0_2 === "否") return "no_shared_tool_team";
   return "";
 }
 
